@@ -2,14 +2,13 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Search from './components/Search';
+import ImageCard from './components/ImageCard';
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
 const App = () => {
   const [word, setWord] = useState('');
   const [images, setImages] = useState([]);
-
-  console.log(images);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +32,7 @@ const App = () => {
     <div>
       <Header title="Images Gallery" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
+      <ImageCard />
     </div>
   );
 };
